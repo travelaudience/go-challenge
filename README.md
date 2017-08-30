@@ -26,8 +26,9 @@ the result as the list of integers.
 The endpoint needs to return the result as quickly as possible, but always 
 within 500 milliseconds. It needs to be able to deal with error conditions when 
 retrieving the URLs. If a URL takes too long to respond, it must be ignored. It 
-is valid to return an empty list as result only if all URLs returned errors or 
-took too long to respond.
+is valid to return an empty list as result only if all URLs returned errors.
+
+If server is not able to handle requests in given time it should return `http.StatusRequestTimeout` status code.
 
 Example
 -------
@@ -76,13 +77,20 @@ Solve the task described above using Go. Only use what's provided in the Go
 standard library. The resulting program must run stand-alone with no other 
 dependencies than the Go compiler.
 
+Project should be located within _$GOPATH/src/candidates/**<your-lastname>**_. 
+And only last directory should be submitted to us.
+
+Server should listen on __0.0.0.0:8080__ and expose pprof endpoints on __0.0.0.0:8090__.
+
+Tests should be runable only by using `go test ./...` and should required no dependencies to pass.
+
 Document your source code, both using comments and in a separate text file that 
 describes the intentions and rationale behind your solution. Also write down 
 any ambiguities that you see in the task description, and describe you how you 
-interpreted them and why. If applicable, write automated tests for your code.
+interpreted them and why.
 
-For testing purposes, you will be provided with an example server that, when 
+As a reference, you will be provided with an example server that, when 
 run, listens on port 8090 and provides the endpoints /primes, /fibo, /odd and 
-/rand.
+/rand. __Another (more demanding) environment will be used to evaluate your solution__.
 
 Please return your working solution within 7 days of receiving the challenge.
