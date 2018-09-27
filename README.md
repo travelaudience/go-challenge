@@ -29,6 +29,9 @@ retrieving the URLs. If a URL takes too long to respond, it must be ignored. It
 is valid to return an empty list as result only if all URLs returned errors or 
 took too long to respond.
 
+The service should widely implement HTTP status codes and use them as documented in the [the specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). 
+It __may/has to__ return `OK` only if each and every URL was processed correctly and in an expected time.
+
 Example
 -------
 
