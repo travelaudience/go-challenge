@@ -27,7 +27,8 @@ The endpoint needs to return the result as quickly as possible, but always
 within 500 milliseconds. It needs to be able to deal with error conditions when 
 retrieving the URLs. If a URL takes too long to respond, it must be ignored. It 
 is valid to return an empty list as result only if all URLs returned errors or 
-took too long to respond.
+took too long to respond. The timeout must be respected regardless of 
+the size of the data.
 
 The service should widely implement HTTP status codes and use them as documented in the [the specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 Consider different status codes for different cases.
