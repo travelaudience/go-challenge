@@ -72,6 +72,20 @@ The service then calculates the result and returns it.
 	<<< { "numbers": [ 1, 2, 3, 5, 7, 8, 11, 13, 21 ] }
 
 
+Development
+---------------------
+As a reference, you will be provided with an tiny golang app that, when 
+run, listens on port 8090 and provides the endpoints /primes, /fibo, /odd and 
+/rand.
+
+To improve your experience additional remote server will be provided to you.
+The same server will be later used by us to evaluate the solution. 
+It exposes single endpoint `/numbers` that can be used in a similar way 
+like ones provided by the reference. 
+This endpoint in its behaviour is trying to mimic real-world application.
+Different payload sizes, status codes and response times can be expected.
+
+
 Completion Conditions
 ---------------------
 
@@ -84,8 +98,5 @@ describes the intentions and rationale behind your solution. Also write down
 any ambiguities that you see in the task description, and describe you how you 
 interpreted them and why. If applicable, write automated tests for your code.
 
-For testing purposes, you will be provided with an example server that, when 
-run, listens on port 8090 and provides the endpoints /primes, /fibo, /odd and 
-/rand.
-
 Please return your working solution within 7 days of receiving the challenge.
+
